@@ -82,7 +82,7 @@ lightCheckBox.addEventListener('click', function () {
 function loadWeb() {
   offStateFireBase(SOUND_PATH);
   offStateFireBase(LIGHT_PATH);
-  offStateFireBase(FAN_STATE);
+  offStateFireBase(FAN_PATH);
   binding('RealTime');
 }
 
