@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 16px;">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body onload="loadWeb()">
+    <div class="header">
+        <h1 class="subject">WELCOME TO IOT LAB</h1>
+        <p class="title">Smart Monitoring and Control System</p>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Define container for LEFT content -->
+            <div class="show-container">
+                <!-- Display Block -->
+                <div class="show-item">
+                    <img src="img/temp.png" alt="temp">
+                    <p>TEMPERATURE</p>
+                    <p class="display-value" id="temp">0</p>
+                </div>
+                <div class="show-item">
+                    <img src="img/rain.png" alt="rain">
+                    <p>AMOUNT OF RAIN</p>
+                    <p class="display-value" id="rain">0</p>
+                </div>
+                <div class="show-item">
+                    <img src="img/humd.png" alt="humd">
+                    <p>HUMIDITY</p>
+                    <p class="display-value" id="humd">0</p>
+                </div>
+            </div>
+
+            <div class="control-container">
+                <!-- Control Block -->
+                <div class="control-item" id="fanControl">
+                    <img src="img/fanoff.png" alt="fan">
+                    <p>FAN</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <!--  -->
+                <div class="control-item" id="soundControl">
+                    <img src="img/soundoff.png" alt="sound">
+                    <p>SOUND</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <!--  -->
+                <div class="control-item" id="lightControl">
+                    <img src="img/ledoff.png" alt="led">
+                    <p>LIGHT</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <!-- Define container for RIGHT content -->
+            <div class="clock">
+                <div class="display"></div>
+            </div>
+            <div class="sidenav">
+                <a href="#RealTime" onclick="binding('RealTime')">Realtime Value</a>
+                <a href="#Average" onclick="binding('Average')">Average Value</a>
+                <a href="#Highest" onclick="binding('Highest')">Highest Value</a>
+            </div>
+
+            <div class="member">
+                <img src="img/khang.jpg" alt="">
+                <p class="name">Tran Phan Bao Khang</p>
+                <p class="info">MSSV: 19119059. Bien Hoa, Dong Nai</p>
+            </div>
+
+            <div class="member">
+                <img src="img/dat.jpg" alt="">
+                <p class="name">Bui Tuan Dat</p>
+                <p class="info">MSSV: 19119039. TP Sa Dec, Dong Thap</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p><strong>Hotline:</strong> 0908-412-810 <strong>(Khang)</strong></p>
+        <p><strong>Email:</strong> 19119059@student.hcmute.edu.vn</p>
+        <p><strong>Address:</strong> 1, Vo Van Ngan Street, Thu Duc City, HCM City</p>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6PC-kCy-a7sRMff8UpdsZm-Pkl_nLnxQ",
+            authDomain: "iotproject-10806.firebaseapp.com",
+            databaseURL: "https://iotproject-10806-default-rtdb.firebaseio.com",
+            projectId: "iotproject-10806",
+            storageBucket: "iotproject-10806.appspot.com",
+            messagingSenderId: "946309166582",
+            appId: "1:946309166582:web:dc364853919a5497e1c3d7",
+            measurementId: "G-WKPRQCS4PM"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
+    </script>
+    <script src="demo.js"></script>
+
+</body>
+
+
+</html>
